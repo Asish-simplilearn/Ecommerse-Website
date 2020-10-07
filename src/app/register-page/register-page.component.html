@@ -1,0 +1,138 @@
+<!--Login Form
+<form [formGroup]="registrationForm">
+
+    <div class="form-group">
+     <input type="text" class="form-control" formControlName="userName" placeholder="Enter username" name="userName" >
+     </div>
+     <div *ngIf="(registrationForm.get('userName').errors?.email||registrationForm.get('userName').errors?.required) && ( registrationForm.get('userName').touched||!registrationForm.get('userName').pristine )">
+        <p [ngStyle]="styleObj">Enter valid Mail ID </p>   
+      </div>
+    </div>
+    <div class="form-group">
+     <input type="text" class="form-control" formControlName="password" placeholder="Enter password" name="password" >
+     </div>
+     <div *ngIf="registrationForm.get('password').errors?.passwordValidator && ( registrationForm.get('password').touched||!registrationForm.get('password').pristine )">
+        <p [ngStyle]="styleObj">Enter valid Password </p>  
+     </div> 
+    </div>
+    <div class="form-group">
+     <input type="text" class="form-control" formControlName="repassword" placeholder="Re-enter password" name="repassword" >
+     </div>
+     <div *ngIf="registrationForm.get('repassword').errors?.passwordValidator && ( registrationForm.get('repassword').touched||!registrationForm.get('repassword').pristine )">
+        <p [ngStyle]="styleObj">Enter valid Password </p>   
+     </div>
+      <div *ngIf="registrationForm.errors?.passwordMatchValidator &&  registrationForm.get('repassword').touched ">
+          <p [ngStyle]="styleObj">Passwords don't match </p>   
+     </div>
+    </div>
+    <div>
+        <input type="checkbox" class="align-self-center offset-1 col-1" > <div class="text-dark col-10 align-self-center"  id="signin1"> accpeting agreement</div>
+    </div>
+    <div>
+        {{userValidationFailMessage}}
+    </div>
+    <div class="form-group">
+     <input type="submit" value="Sign Up" (click)="loginPageEventHandler();">
+    </div>
+</form>
+-->
+<br><br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="mx-auto">
+
+            <div class="row" style="max-width:600px;min-width:390px;background-color:#f4fae1e7;" id="loginform">
+                <div class=" col-12">
+                    <form class="" style="margin-left:5%" [formGroup]="registrationForm">
+                        <div>
+                            <br>
+                            <div class="row">
+                                <i class="material-icons offset-2  " style="margin-top:1.5%" id="signin">&nbsp;login</i>
+                                <div class=" align-self-center">
+                                    <h3 id="signin" style="height:auto;width:auto;  font-family:Nunito;">&nbsp;Sign up
+                                        with SYI</h3>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <div class="row mx-auto">
+                                    <div class="col-6 row">
+                                        <i class="material-icons" style="margin-top:1.5%" id="signin11">email</i>
+                                        <h5 class="text-dark align-self-center" id="signin1">Email Id:&nbsp;&nbsp;</h5>
+                                    </div>
+                                    <input type="text" class="form-control" formControlName="userName"
+                                        placeholder="Enter username" name="userName">
+                                </div>
+                                <div
+                                    *ngIf="(registrationForm.get('userName').errors?.email||registrationForm.get('userName').errors?.required) && ( registrationForm.get('userName').touched||!registrationForm.get('userName').pristine )">
+                                    <p style="color: red;margin-left:2%;">Enter valid Mail ID </p>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row mx-auto">
+                                    <div class="col-6 row">
+                                        <i class="material-icons " style="margin-top:0%" id="signin11">https</i>
+                                        <h5 class="text-dark align-self-center" id="signin1">password:&nbsp;&nbsp;</h5>
+                                    </div>
+                                    <input type="text" class="form-control" formControlName="password"
+                                        placeholder="Enter password" name="password">
+                                </div>
+                                <div
+                                    *ngIf="registrationForm.get('password').errors?.passwordValidator && ( registrationForm.get('password').touched||!registrationForm.get('password').pristine )">
+                                    <p style="color: red;margin-left:2%;">Enter valid Password </p>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <div class="row mx-auto">
+                                    <div class="col-6 row">
+                                        <i class="material-icons " style="margin-top:0%" id="signin11">https</i>
+                                        <h5 class="text-dark align-self-center" id="signin1">password:&nbsp;&nbsp;</h5>
+                                    </div>
+                                    <input type="text" class="form-control" formControlName="repassword"
+                                        placeholder="Re-enter password" name="repassword">
+                                </div>
+                                <div
+                                    *ngIf="registrationForm.get('repassword').errors?.passwordValidator && ( registrationForm.get('repassword').touched||!registrationForm.get('repassword').pristine )">
+                                    <p style="color: red;margin-left:2%;">Enter valid Password </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+                                <input type="checkbox" class="align-self-center offset-1 col-1">
+                                <div class="text-dark col-10 align-self-center" id="signin1"> accpeting agreement</div>
+                            </div>
+
+
+                            <br>
+                            <div class="form-group">
+                                <p id="errorMessage" style="color: red;margin-left:2%;">
+                                    {{userValidationFailMessage}}
+                                </p>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <input type="button" [disabled]="!registrationForm.valid" value=" Create new Account"
+                                        class="btn btn-info" style="margin-left:25%;"
+                                        (click)="loginPageEventHandler();" />
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <br>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

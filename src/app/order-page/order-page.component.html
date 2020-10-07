@@ -1,0 +1,44 @@
+
+
+
+
+<div class="container-fluid">
+   <div class="row" >
+        <div class="mx-auto">
+          <form [(formGroup)]="DataForm" style="background-color:#FFF8DC;min-width:900px;border-radius: 15px 15px 10px 10px;">
+              <br>
+            <div class="row">
+              <div class="col-8 row">
+              <h2 class="offset-6 ">Order Items</h2></div>
+            </div>
+           <br>
+            <div class="form-group">
+              <div class="row mx-auto">
+               <div class="col-4 row">
+                <i class="material-icons  col-1 " style="margin-top:2%;">person_outline</i>
+              <h5 class="col-10 align-self-center" style="margin-left:0%">Name :</h5></div> 
+              <input type="text" formControlName="Name" placeholder="Photo credits" class="form-control col-8" style="margin-left:0% ;max-height:40px"></div>
+            </div>
+            <div class="form-group">
+              <div class="row mx-auto">
+                <div class="col-4 row">
+                  <i class="material-icons  col-1 " style="margin-top:2%;">settings_phone</i>
+              <h5 class="col-10 align-self-center" style="margin-left:0%">Mobile No:</h5></div>
+              <input type="text" formControlName="MobileNo" placeholder="Photo Location" class="form-control col-8"></div>
+            </div>
+            <div class="form-group">
+              <div class="row mx-auto">
+                <div class="col-4 row">
+              <i class="material-icons  col-1 " style="margin-top:3%;">location_city</i>
+              <h5 class="col-10 " style="margin-top:2%">Address:</h5></div>
+              <textarea type="text" formControlName="Address" placeholder="Wrtie a story about the place... "class="form-control col-8" rows="6"></textarea></div>
+            </div>
+            
+            <br>
+            <div class="form-group row offset-3">
+              <input type="button" value="Order by COD" class="btn btn-info col-6" style="margin-bottom:2% " (click)="orderEventHandler();">
+             </div>
+          </form>
+        </div>
+   </div>
+   </div>

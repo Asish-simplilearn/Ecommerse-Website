@@ -1,0 +1,67 @@
+<div id="container-fluid">
+
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <span class="card-title">
+          Complaint
+        </span>
+      </div>
+      <div class="card-body ">
+        <form [(formGroup)]="complaintForm">
+          <div class="row">
+            <p class="" style="margin-left: 1%;"> Complaint Description:</p>
+            <textarea  formControlName="textbox" type="text" placeholder="Detailed address... " class="form-control" rows="8"
+              style="min-width:700px;max-height:100px;"></textarea>
+          </div>
+          <div class="row">
+            <input class="mx-auto" style="margin-top:2% ;" type="button" value="complaint"
+              (click)="complaintEventHandler();">
+          </div>
+          <div style="color:red;font-size:25px;">
+            {{message}}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-4">
+    <div class="card">
+      <div class="card-header bg-primary">
+        <span class="card-title">
+          Contactus
+        </span>
+      </div>
+      <div class="card-body ">
+        <div>
+          <h4>Details</h4>
+
+          <p>
+            Industry Partnership Inquiries
+            If you’re a company, government, or non-profit entity interested in creating content on the Coursera
+            platform, please contact us here
+
+          </p>
+          <p>
+            Coursera for Business and Coursera for Government Inquiries
+            If you’re an enterprise level organization interested in using Coursera content to upskill your employees or
+            workforce, contact us here
+          </p>
+          <p>
+            Privacy Enquiries
+            If you have questions about our Privacy Notice or an enquiry about how we protect your personal information,
+            you can contact us at privacy@coursera.org.
+          </p>
+          Press Inquiries
+          Members of the press may consult Coursera’s Press Page for general information. Specific questions or
+          inquiries for our press team should be emailed to press@coursera.org.
+          <p>
+            Special Concerns
+            Security vulnerabilities on the Coursera site may be reported via the HackerOne platform. We take our site
+            security and user privacy very seriously, and we appreciate your help in keeping Coursera safe!
+          </p>
+          <h4> Mail Id: support@syi.com</h4>
+        </div>
+      </div>
+    </div>
+  </div>

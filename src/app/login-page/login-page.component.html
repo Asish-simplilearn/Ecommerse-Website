@@ -1,0 +1,88 @@
+
+  <br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="mx-auto">
+
+      <div class="row" style="max-width:600px;min-width:390px;background-color:#f4fae1e7;" id="loginform">
+        <div class=" col-12">
+          <form class="" style="margin-left:5%" [formGroup]="loginForm">
+            <div>
+              <br>
+              <div class="row">
+                <i class="material-icons offset-2  " style="margin-top:1.5%" id="signin">&nbsp;login</i>
+                <div class=" align-self-center">
+                  <h3 id="signin" style="height:auto;width:auto;  font-family:Nunito;">&nbsp;Sign into SYI</h3>
+                </div>
+              </div>
+              <br>
+             <div class="form-group">
+                <div class="row mx-auto">
+                  <div class="col-6 row">
+                    <i class="material-icons" style="margin-top:1.5%" id="signin11">email</i>
+                    <h5 class="text-dark align-self-center" id="signin1">Email Id:&nbsp;&nbsp;</h5>
+                  </div>
+                  <input type="text" class="form-control" formControlName="userName" placeholder="Enter username"
+                    name="userName">
+                  </div>
+                  <div
+                    *ngIf="(loginForm.get('userName').errors?.email||loginForm.get('userName').errors?.required) && ( loginForm.get('userName').touched||!loginForm.get('userName').pristine )">
+                    <p [ngStyle]="styleObj">Enter valid Mail ID </p>
+                  </div>
+               </div>
+                 <div class="form-group">
+                  <div class="row mx-auto">
+                    <div class="col-6 row">
+                      <i class="material-icons " style="margin-top:0%" id="signin11">https</i>
+                      <h5 class="text-dark align-self-center" id="signin1">password:&nbsp;&nbsp;</h5>
+                    </div>
+                    <input type="text" class="form-control" formControlName="password" placeholder="Enter password"
+                      name="password">
+                    </div>
+                    <div
+                      *ngIf="loginForm.get('password').errors?.passwordValidator && ( loginForm.get('password').touched||!loginForm.get('password').pristine )" >
+                      <p [ngStyle]="styleObj" style="margin-left:2%;">Enter valid Password </p>
+                    </div>
+                  
+                  </div>
+
+                  <br>
+                  <div class="form-group">
+                    <p id="errorMessage" [ngStyle]="styleObj">
+                      {{userValidationFailMessage}}
+                    </p>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <input type="button" [disabled]="!loginForm.valid" value=" Login and Continue"
+                        class="btn btn-info" style="margin-left:25%;" (click)="homePageEventHandler();" />
+                    </div>
+                  </div>
+                  <div class="form-group ">
+                    <a href="#" id="signin111">Forgot password?<br></a>
+                    <a  (click)="registartionPageEventHandler();" id="signin111">Sign Up</a>
+                  </div>
+                  <div style="color:black;height:1px;">
+                    <hr style="background-color: black;">
+                  </div>
+                  <div class="row offset-5">OR</div>
+                  <div class="row offset-4">Login With</div>
+                  <br>
+                  <div class="row">
+                    <div class="offset-2 col-4">
+                      <a href="#"> <img src="../assets/facebook.jpg" style="max-width:40px; max-height:40px;"></a>
+                    </div>
+                    <div class="offset-1 col-4" style="margin-left:5%;">
+                      <a href="#"> <img src="../assets/gmail.jpg" style="max-width:40px; max-height:40px;"></a>
+                    </div>
+                  </div>
+                </div>
+                <br>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

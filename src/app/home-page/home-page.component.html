@@ -1,0 +1,184 @@
+<br>
+<br>
+
+<div id="slideshow" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#slideshow" data-slide-to="0" class="active"></li>
+    <li data-target="#slideshow" data-slide-to="1"></li>
+  </ul>
+
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container">
+        <div class="row">
+          <div class="offset-1 col-6">
+            <img src="../../assets/puma2.png" alt="Trend1" class="img-xs-fluid " width="600px" height="400px" />
+          </div>
+          <div class="col-5 bg-warning align-self-center"  style="border-radius:15px 15px 10px 10px;">
+            <br>
+              <h4 class="text-center" style="font-style:normal">Puma</h4>
+                <div class="row">
+                  <h1 class="col-1">&ldquo;</h1>
+                    <p class="text-black col-10">Puma SE, branded as Puma, is a German multinational corporation that designs and manufactures athletic and casual footwear, apparel and accessories, which is headquartered in Herzogenaurach, Bavaria, Germany. </p>
+                  <h1 class="col-1" style="margin-top:8%">&rdquo;</h1>
+               </div>
+               <div class="row">
+                <a href="#pumacardElement" class="offset-2">goto</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="container">
+        <div class="row">
+          <div class="offset-1 col-6">
+            <img src="../../assets/adidas.jpg" alt="Trend2" class="img-xs-fluid" width="600px" height="400px" />
+          </div>
+          <div class="col-5 bg-warning align-self-center" style="border-radius:15px 15px 10px 10px;">
+            <br>
+              <h4 class="text-center" style="font-style:normal">Adidas</h4>
+                <div class="row">
+                  <h1 class="col-1">&ldquo;</h1>
+                    <p class="text-black col-10">Adidas AG is a German multinational corporation, founded and headquartered in Herzogenaurach, Germany, that designs and manufactures shoes, clothing and accessories. It is the largest sportswear manufacturer in Europe.</p>
+                  <h1 class="col-1" style="margin-top:8%">&rdquo;</h1>
+               </div>
+               <div class="row">
+               <a href="#adidascardElement" class="offset-2">goto</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#slideshow" data-slide="prev" style="color: red;"> <span class="carousel-control-prev-icon"></span> </a>
+  <a class="carousel-control-next" href="#slideshow" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+  <br>
+  <br>
+
+
+<div class="container-fluid">
+<h2 style="color: white;">Puma</h2>
+<div class="row card-deck mx-auto" id='pumacardElement'>
+  <div class="row mt-3 mb-3">
+    <div class="col-sm-10 offset-sm-1 col-xs-12 offset-xs-0">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4"  *ngFor="let i of pumaitems;">
+                <div class="card" style="height: 400px; ">
+                    <img src='../../assets/{{i.itemNo}}.jpeg' class="img-responsive" style="height: 65%; width:100%">
+                    <div class="w-100 text-center m-auto">
+                            <button class="btn btn-primary" (click)="addItemToCartEventHandler(i);">
+                                add Item
+                            </button>
+                    </div>
+                    <div>
+                      <div class="ml-2" style="font-weight:400; font-size: 1.1em;">
+                        Brand    : {{i.brand}} 
+                     </div>
+                     <div class="ml-2" style="font-weight:400; font-size: 1.1em;">
+                        Size     : {{i.size}}
+                     </div>
+                     <div class="ml-2 border-bottom" style="font-weight:400; font-size: 1.1em;">
+                        Price    : Rs {{i.cost}}/- each 
+                     </div>
+                     <div class="ml-2 border-bottom" style="font-weight:400; font-size: 1.1em;">
+                       
+                     </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" *ngIf="pumaitems && !pumaitems.length">
+                <div class="text-center">
+                     !! No Items Found 
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+</div>
+<h2  id='adidascardElement'style="color: white;">Adidas</h2>
+<div class="row card-deck mx-auto">
+  <div class="row mt-3 mb-3">
+    <div class="col-sm-10 offset-sm-1 col-xs-12 offset-xs-0">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4"  *ngFor="let i of adidasitems;">
+                <div class="card" style="height: 400px; ">
+                    <img src="../../assets/{{i.itemNo}}.jpeg" class="img-responsive" style="height: 65%; width:100%">
+                    <div class="w-100 text-center m-auto">
+                            <button class="btn btn-primary" (click)="addItemToCartEventHandler(i);">
+                                add Item
+                            </button>
+                    </div>
+                    <div>
+                      <div class="ml-2" style="font-weight:400; font-size: 1.1em;">
+                        Brand    : {{i.brand}}
+                     </div>
+                     <div class="ml-2" style="font-weight:400; font-size: 1.1em;">
+                        Size     : {{i.size}}
+                     </div>
+                     <div class="ml-2 border-bottom" style="font-weight:400; font-size: 1.1em;">
+                        Price    : Rs {{i.cost}}/- each 
+                     </div>
+                     <div class="ml-2 border-bottom" style="font-weight:400; font-size: 1.1em;">
+                      
+                     </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" *ngIf="adidasitems && !adidasitems.length">
+                <div class="text-center">
+                     !! No Items Found 
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+<h2 style="color: white;">All shirts</h2>
+<div class="row card-deck mx-auto" id='allcardElement'>
+  <div class="row mt-3 mb-3">
+    <div class="col-sm-10 offset-sm-1 col-xs-12 offset-xs-0">
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4"  *ngFor="let i of allitems;">
+                <div class="card" style="height: 400px; ">
+                    <img src="../../assets/{{i.itemNo}}.jpeg" class="img-responsive" style="height: 65%; width:100%">
+                    <div class="w-100 text-center m-auto">
+                            <button class="btn btn-primary" (click)="addItemToCartEventHandler(i);">
+                                add Item
+                            </button>
+                    </div>
+                    <div>
+                      <div class="ml-2" style="font-weight:400; font-size: 1.1em;">
+                        Brand    : {{i.brand}}
+                     </div>
+                     <div class="ml-2" style="font-weight:400; font-size: 1.1em;">
+                        Size     : {{i.size}}
+                     </div>
+                     <div class="ml-2 border-bottom" style="font-weight:400; font-size: 1.1em;">
+                        Price    : Rs {{i.cost}}/- each 
+                     </div>
+                     <div class="ml-2 border-bottom" style="font-weight:400; font-size: 1.1em;">
+                        
+                     </div>
+                    </div>
+                </div>
+              
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mb-4" *ngIf="allitems && !allitems.length">
+                <div class="text-center">
+                     !! No Items Found Shop Now
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
